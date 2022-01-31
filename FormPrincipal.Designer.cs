@@ -51,25 +51,48 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPesquisarCliente = new System.Windows.Forms.TabPage();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.textCpfPesquisa = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.tabDeletarCliente = new System.Windows.Forms.TabPage();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textDeleteClientes = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridDelete = new System.Windows.Forms.DataGridView();
             this.btnAtualizar = new System.Windows.Forms.Button();
+            this.dataGridDelete = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textDeleteClientes = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtEditarCEP = new System.Windows.Forms.TextBox();
+            this.txtEditarCidade = new System.Windows.Forms.TextBox();
+            this.txtEditarComplemento = new System.Windows.Forms.TextBox();
+            this.txtEditarRua = new System.Windows.Forms.TextBox();
+            this.txtEditarEmail = new System.Windows.Forms.TextBox();
+            this.txtEditarTelefone = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btnConsultaEditarCliente = new System.Windows.Forms.Button();
+            this.textEditarCliente = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.cbEditarNome = new System.Windows.Forms.ComboBox();
+            this.cbEditarCPF = new System.Windows.Forms.ComboBox();
             this.tabCRUD.SuspendLayout();
             this.tabCadastrarClientes.SuspendLayout();
             this.tabPesquisarCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.tabDeletarCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDelete)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCRUD
@@ -77,6 +100,7 @@
             this.tabCRUD.Controls.Add(this.tabCadastrarClientes);
             this.tabCRUD.Controls.Add(this.tabPesquisarCliente);
             this.tabCRUD.Controls.Add(this.tabDeletarCliente);
+            this.tabCRUD.Controls.Add(this.tabPage1);
             this.tabCRUD.Location = new System.Drawing.Point(3, 1);
             this.tabCRUD.Name = "tabCRUD";
             this.tabCRUD.SelectedIndex = 0;
@@ -311,6 +335,30 @@
             this.tabPesquisarCliente.UseVisualStyleBackColor = true;
             this.tabPesquisarCliente.Click += new System.EventHandler(this.tabPesquisarCliente_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(623, 77);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(52, 23);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Atualizar";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Location = new System.Drawing.Point(397, 59);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 34);
+            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // textCpfPesquisa
             // 
             this.textCpfPesquisa.Location = new System.Drawing.Point(207, 68);
@@ -369,68 +417,17 @@
             this.tabDeletarCliente.UseVisualStyleBackColor = true;
             this.tabDeletarCliente.Click += new System.EventHandler(this.tabDeletarCliente_Click);
             // 
-            // btnRefresh
+            // btnAtualizar
             // 
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(623, 77);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(52, 23);
-            this.btnRefresh.TabIndex = 5;
-            this.btnRefresh.Text = "Atualizar";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(182, 17);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(297, 31);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "DELETAR CLIENTES";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(163, 68);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(38, 18);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "CPF";
-            // 
-            // textDeleteClientes
-            // 
-            this.textDeleteClientes.Location = new System.Drawing.Point(207, 68);
-            this.textDeleteClientes.Name = "textDeleteClientes";
-            this.textDeleteClientes.Size = new System.Drawing.Size(175, 20);
-            this.textDeleteClientes.TabIndex = 4;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(397, 59);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(100, 34);
-            this.btnPesquisar.TabIndex = 4;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(397, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 34);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "DELETAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.Location = new System.Drawing.Point(623, 77);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(52, 23);
+            this.btnAtualizar.TabIndex = 7;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // dataGridDelete
             // 
@@ -445,17 +442,267 @@
             this.dataGridDelete.TabIndex = 6;
             this.dataGridDelete.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDelete_CellContentClick);
             // 
-            // btnAtualizar
+            // button1
             // 
-            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(623, 77);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(52, 23);
-            this.btnAtualizar.TabIndex = 7;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(397, 59);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 34);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "DELETAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textDeleteClientes
+            // 
+            this.textDeleteClientes.Location = new System.Drawing.Point(207, 68);
+            this.textDeleteClientes.Name = "textDeleteClientes";
+            this.textDeleteClientes.Size = new System.Drawing.Size(175, 20);
+            this.textDeleteClientes.TabIndex = 4;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(163, 68);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 18);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "CPF";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(182, 17);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(297, 31);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "DELETAR CLIENTES";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.cbEditarCPF);
+            this.tabPage1.Controls.Add(this.cbEditarNome);
+            this.tabPage1.Controls.Add(this.btnConsultaEditarCliente);
+            this.tabPage1.Controls.Add(this.textEditarCliente);
+            this.tabPage1.Controls.Add(this.label25);
+            this.tabPage1.Controls.Add(this.label24);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.txtEditarCEP);
+            this.tabPage1.Controls.Add(this.txtEditarCidade);
+            this.tabPage1.Controls.Add(this.txtEditarComplemento);
+            this.tabPage1.Controls.Add(this.txtEditarRua);
+            this.tabPage1.Controls.Add(this.txtEditarEmail);
+            this.tabPage1.Controls.Add(this.txtEditarTelefone);
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.label19);
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Controls.Add(this.label21);
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(682, 350);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Atualizar Cadastro";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(251, 305);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(423, 31);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "EDITAR DADOS DO CLIENTE";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtEditarCEP
+            // 
+            this.txtEditarCEP.Location = new System.Drawing.Point(520, 252);
+            this.txtEditarCEP.Name = "txtEditarCEP";
+            this.txtEditarCEP.Size = new System.Drawing.Size(154, 20);
+            this.txtEditarCEP.TabIndex = 33;
+            // 
+            // txtEditarCidade
+            // 
+            this.txtEditarCidade.Location = new System.Drawing.Point(251, 249);
+            this.txtEditarCidade.Name = "txtEditarCidade";
+            this.txtEditarCidade.Size = new System.Drawing.Size(188, 20);
+            this.txtEditarCidade.TabIndex = 32;
+            // 
+            // txtEditarComplemento
+            // 
+            this.txtEditarComplemento.Location = new System.Drawing.Point(600, 208);
+            this.txtEditarComplemento.Name = "txtEditarComplemento";
+            this.txtEditarComplemento.Size = new System.Drawing.Size(74, 20);
+            this.txtEditarComplemento.TabIndex = 31;
+            // 
+            // txtEditarRua
+            // 
+            this.txtEditarRua.Location = new System.Drawing.Point(251, 208);
+            this.txtEditarRua.Name = "txtEditarRua";
+            this.txtEditarRua.Size = new System.Drawing.Size(223, 20);
+            this.txtEditarRua.TabIndex = 30;
+            // 
+            // txtEditarEmail
+            // 
+            this.txtEditarEmail.Location = new System.Drawing.Point(445, 169);
+            this.txtEditarEmail.Name = "txtEditarEmail";
+            this.txtEditarEmail.Size = new System.Drawing.Size(229, 20);
+            this.txtEditarEmail.TabIndex = 29;
+            // 
+            // txtEditarTelefone
+            // 
+            this.txtEditarTelefone.Location = new System.Drawing.Point(564, 137);
+            this.txtEditarTelefone.Name = "txtEditarTelefone";
+            this.txtEditarTelefone.Size = new System.Drawing.Size(110, 20);
+            this.txtEditarTelefone.TabIndex = 27;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(462, 251);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(39, 18);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "CEP";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(183, 249);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(54, 18);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Cidade";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(492, 207);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(102, 18);
+            this.label18.TabIndex = 23;
+            this.label18.Text = "Complemento";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(202, 207);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(35, 18);
+            this.label19.TabIndex = 22;
+            this.label19.Text = "Rua";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(492, 136);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(65, 18);
+            this.label20.TabIndex = 21;
+            this.label20.Text = "Telefone";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(389, 169);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(50, 18);
+            this.label21.TabIndex = 20;
+            this.label21.Text = "E-mail";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(199, 169);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(38, 18);
+            this.label22.TabIndex = 19;
+            this.label22.Text = "CPF";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(188, 135);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(49, 18);
+            this.label23.TabIndex = 18;
+            this.label23.Text = "Nome";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(128, 23);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(429, 31);
+            this.label24.TabIndex = 35;
+            this.label24.Text = "EDITAR DADOS DE CLIENTES";
+            // 
+            // btnConsultaEditarCliente
+            // 
+            this.btnConsultaEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaEditarCliente.Location = new System.Drawing.Point(410, 70);
+            this.btnConsultaEditarCliente.Name = "btnConsultaEditarCliente";
+            this.btnConsultaEditarCliente.Size = new System.Drawing.Size(114, 34);
+            this.btnConsultaEditarCliente.TabIndex = 38;
+            this.btnConsultaEditarCliente.Text = "PESQUISAR";
+            this.btnConsultaEditarCliente.UseVisualStyleBackColor = true;
+            this.btnConsultaEditarCliente.Click += new System.EventHandler(this.btnConsultaEditarCliente_Click);
+            // 
+            // textEditarCliente
+            // 
+            this.textEditarCliente.Location = new System.Drawing.Point(220, 79);
+            this.textEditarCliente.Name = "textEditarCliente";
+            this.textEditarCliente.Size = new System.Drawing.Size(175, 20);
+            this.textEditarCliente.TabIndex = 37;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(176, 79);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(38, 18);
+            this.label25.TabIndex = 36;
+            this.label25.Text = "CPF";
+            // 
+            // cbEditarNome
+            // 
+            this.cbEditarNome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEditarNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbEditarNome.FormattingEnabled = true;
+            this.cbEditarNome.Location = new System.Drawing.Point(251, 136);
+            this.cbEditarNome.Name = "cbEditarNome";
+            this.cbEditarNome.Size = new System.Drawing.Size(223, 21);
+            this.cbEditarNome.TabIndex = 39;
+            // 
+            // cbEditarCPF
+            // 
+            this.cbEditarCPF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbEditarCPF.FormattingEnabled = true;
+            this.cbEditarCPF.Location = new System.Drawing.Point(251, 170);
+            this.cbEditarCPF.Name = "cbEditarCPF";
+            this.cbEditarCPF.Size = new System.Drawing.Size(132, 21);
+            this.cbEditarCPF.TabIndex = 40;
             // 
             // FormPrincipal
             // 
@@ -463,6 +710,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 374);
             this.Controls.Add(this.tabCRUD);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPrincipal";
@@ -479,6 +727,8 @@
             this.tabDeletarCliente.ResumeLayout(false);
             this.tabDeletarCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDelete)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -521,6 +771,28 @@
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.DataGridView dataGridDelete;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btnConsultaEditarCliente;
+        private System.Windows.Forms.TextBox textEditarCliente;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtEditarCEP;
+        private System.Windows.Forms.TextBox txtEditarCidade;
+        private System.Windows.Forms.TextBox txtEditarComplemento;
+        private System.Windows.Forms.TextBox txtEditarRua;
+        private System.Windows.Forms.TextBox txtEditarEmail;
+        private System.Windows.Forms.TextBox txtEditarTelefone;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox cbEditarCPF;
+        public System.Windows.Forms.ComboBox cbEditarNome;
     }
 }
 

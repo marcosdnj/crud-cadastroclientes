@@ -30,18 +30,38 @@ namespace CRUD_Clientes
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-
             con.Open();
+
             nomeUsuario = $"SELECT Nome FROM LoginFuncionario WHERE Usuario = '{textLogin.Text}' and Senha = '{textSenha.Text}'";
             SqlDataAdapter dp = new SqlDataAdapter(nomeUsuario, con);
             DataTable dt = new DataTable();
             dp.Fill(dt);
 
 
+            try
+            {
+                if (dt.Rows.Count == 1)
+                {
 
-         
+                    FormPrincipal principal = new FormPrincipal();
+                    principal.Show();
+                    this.Hide();
+                    con.Close();
+                   
+                }
+                else if(dt.Rows.Count == 0)
+                    MessageBox.Show("Usuario ou senha incorretos", "Erro ao logar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+            }
+            catch (Exception erroLogin)
+            {
+                MessageBox.Show("Usuario ou senha incorretos", "Erro ao logar", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
+            }
+            textLogin.Clear();
+            textSenha.Clear();
+            textLogin.Focus();
+            con.Close();
            
 
         }

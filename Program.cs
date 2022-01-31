@@ -17,11 +17,11 @@ namespace CRUD_Clientes
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            /* MUDAR LINHA ABAIXO ANTES DE RODAR O PROGRAMA*/
+            /* MUDAR LINHA ABAIXO ANTES DE RODAR O PROGRAMA */
 
-            Application.Run(new FormPrincipal());
+            //Application.Run(new FormPrincipal());
 
-           //Application.Run(new FormLogin());
+             Application.Run(new FormLogin());
         }
     }
 }

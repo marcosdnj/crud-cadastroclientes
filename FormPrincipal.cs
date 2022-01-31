@@ -24,6 +24,8 @@ namespace CRUD_Clientes
         string refreshClientes = "";
         string deleteClientes = "";
         string atualizarDelete = "";
+        string editarClientes = "";
+        string selecionarClientes = "";
 
 
 
@@ -81,7 +83,7 @@ namespace CRUD_Clientes
             con.Open();
 
             //GRID DE PESQUISA
-            clientesCadastrados = $"SELECT * FROM clientesCadastrados";
+            clientesCadastrados = $"SELECT TOP (200) ID,Nome,CPF,email,Telefone,Rua,Complemento,Cidade,CEP FROM clientesCadastrados";
             SqlDataAdapter dp = new SqlDataAdapter(clientesCadastrados, con);
             DataTable dt = new DataTable();
             dp.Fill(dt);
@@ -90,7 +92,7 @@ namespace CRUD_Clientes
 
             //GRID DE EXCLUSÃO
 
-            clientesDelete = $"SELECT * FROM clientesCadastrados";
+            clientesDelete = $"SELECT TOP (200) ID,Nome,CPF,email,Telefone,Rua,Complemento,Cidade,CEP FROM clientesCadastrados";
             SqlDataAdapter dpDelete = new SqlDataAdapter(clientesDelete, con);
             DataTable dtDelete = new DataTable();
             dpDelete.Fill(dtDelete);
@@ -113,11 +115,12 @@ namespace CRUD_Clientes
 
 
         }
+        //SELECT TOP (200) ID,Nome,CPF,email,Telefone,Rua,Complemento,Cidade,CEP FROM clientesCadastrados
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             con.Open();
-            pesquisaClientes = $"SELECT * FROM clientesCadastrados WHERE CPF = '{textCpfPesquisa.Text}'";
+            pesquisaClientes = $"SELECT ID,Nome,CPF,email,Telefone,Rua,Complemento,Cidade,CEP FROM clientesCadastrados WHERE CPF = '{textCpfPesquisa.Text}'";
             SqlDataAdapter dp = new SqlDataAdapter(pesquisaClientes, con);
             DataTable dt = new DataTable();
             dp.Fill(dt);
@@ -134,7 +137,7 @@ namespace CRUD_Clientes
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             con.Open();
-            refreshClientes = $"SELECT * FROM clientesCadastrados";
+            refreshClientes = $"SELECT TOP (200) ID,Nome,CPF,email,Telefone,Rua,Complemento,Cidade,CEP FROM clientesCadastrados";
             SqlDataAdapter dp = new SqlDataAdapter(refreshClientes, con);
             DataTable dt = new DataTable();
             dp.Fill(dt);
@@ -151,7 +154,7 @@ namespace CRUD_Clientes
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             con.Open();
-            atualizarDelete = $"SELECT * FROM clientesCadastrados";
+            atualizarDelete = $"SELECT TOP (200) ID,Nome,CPF,email,Telefone,Rua,Complemento,Cidade,CEP FROM clientesCadastrados";
             SqlDataAdapter dp = new SqlDataAdapter(atualizarDelete, con);
             DataTable dt = new DataTable();
             dp.Fill(dt);
@@ -187,23 +190,67 @@ namespace CRUD_Clientes
                 dataGridClientes.DataSource = dt;
                 
             }
-            else
-            {
-               
-            }
+           
+            con.Close();
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+                    }
+
+        private void btnConsultaEditarCliente_Click(object sender, EventArgs e)
+        {
+         
+            con.Open();
+
+            selecionarClientes = $"SELECT ID,Nome,CPF,email,Telefone,Rua,Complemento,Cidade,CEP FROM clientesCadastrados WHERE CPF = '{textEditarCliente.Text}'";
+            SqlDataAdapter dp = new SqlDataAdapter(selecionarClientes, con);
+          //  DataTable dt = new DataTable()
+            DataSet ds = new DataSet();
+            dp.Fill(ds);
+            
+
+            cbEditarNome.DataSource = ds.Tables[0];
+            cbEditarNome.DisplayMember = "Nome";
+            cbEditarNome.ValueMember =  "Id"; 
+
+
+            cbEditarCPF.DataSource = ds.Tables[0];
+            cbEditarCPF.DisplayMember = "CPF";
+            cbEditarCPF.ValueMember = "Id";
+
+
+
+            con.Close();
+           
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+
+
+            editarClientes = $@"UPDATE dbo.clientesCadastrados 
+                               SET email = '{txtEditarEmail.Text}',
+                               Telefone =  '{txtEditarTelefone.Text}',
+                               Rua = '{txtEditarRua.Text}',
+                               Complemento = '{txtEditarComplemento.Text}',
+                               Cidade = '{txtEditarCidade.Text}',
+                               CEP = '{txtEditarCEP.Text}'
+                            WHERE CPF = '{cbEditarCPF.Text}'";
+
+            SqlDataAdapter dp = new SqlDataAdapter(editarClientes, con);
+            DataTable dt = new DataTable();
+            dp.Fill(dt);
+
+                     
+            
             con.Close();
 
 
-            //deleteClientes = $"DELETE FROM clientesCadastrados WHERE CPF = '{textDeleteClientes.Text}'";
-
-            //SqlDataAdapter dp = new SqlDataAdapter(deleteClientes, con);
-            //DataTable dt = new DataTable();
-            //dp.Fill(dt);
-
-            //dataGridClientes.DataSource = dt;
-            //con.Close();
-
-
+            textEditarCliente.Clear();
         }
     }
 }
