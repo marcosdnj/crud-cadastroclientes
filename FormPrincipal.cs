@@ -125,7 +125,19 @@ namespace CRUD_Clientes
             DataTable dt = new DataTable();
             dp.Fill(dt);
 
+
+
             dataGridClientes.DataSource = dt;
+
+
+            if (dt.Rows.Count == 0)
+            {
+
+                MessageBox.Show("Não foi encontrado nenhum cliente com esse CPF\nVerifique os dados e tente novamente!", "Nenhum dado encontrado", MessageBoxButtons.OK);
+
+            }
+
+
             con.Close();
         }
 
@@ -175,28 +187,36 @@ namespace CRUD_Clientes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con.Open();
 
-            var res = MessageBox.Show("O Cliente será excluido\nTem certeza que deseja concluir esta ação?", "ATENÇÃO", MessageBoxButtons.YesNo);
-             
-            if(res == DialogResult.Yes)
-            {
-                deleteClientes = $"DELETE FROM clientesCadastrados WHERE CPF = '{textDeleteClientes.Text}'";
 
-                SqlDataAdapter dp = new SqlDataAdapter(deleteClientes, con);
-                DataTable dt = new DataTable();
-                dp.Fill(dt);
 
-                dataGridClientes.DataSource = dt;
-                
-            }
            
-            con.Close();
+           
+                con.Open();
+
+
+                var res = MessageBox.Show("O Cliente será excluido\nTem certeza que deseja concluir esta ação?", "ATENÇÃO", MessageBoxButtons.YesNo);
+
+                if (res == DialogResult.Yes)
+                {
+                    deleteClientes = $"DELETE FROM clientesCadastrados WHERE CPF = '{textDeleteClientes.Text}'";
+
+                    SqlDataAdapter dp = new SqlDataAdapter(deleteClientes, con);
+                    DataTable dt = new DataTable();
+                    dp.Fill(dt);
+
+                    dataGridClientes.DataSource = dt;
+
+
+                    
+
+            }
+                con.Close();
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
-                    }
+        }
 
         private void btnConsultaEditarCliente_Click(object sender, EventArgs e)
         {
@@ -205,10 +225,23 @@ namespace CRUD_Clientes
 
             selecionarClientes = $"SELECT ID,Nome,CPF,email,Telefone,Rua,Complemento,Cidade,CEP FROM clientesCadastrados WHERE CPF = '{textEditarCliente.Text}'";
             SqlDataAdapter dp = new SqlDataAdapter(selecionarClientes, con);
-          //  DataTable dt = new DataTable()
+            SqlDataAdapter dpValidacao = new SqlDataAdapter(selecionarClientes, con);
+            DataTable dt = new DataTable();
+            dpValidacao.Fill(dt);
+
+
+
+
             DataSet ds = new DataSet();
             dp.Fill(ds);
-            
+            //VALIDAÇÃO  
+            if (dt.Rows.Count == 0)
+            {
+
+                MessageBox.Show("Não foi encontrado nenhum cliente com esse CPF\nVerifique os dados e tente novamente!", "Nenhum dado encontrado", MessageBoxButtons.OK);
+                textEditarCliente.Clear();
+            }
+
 
             cbEditarNome.DataSource = ds.Tables[0];
             cbEditarNome.DisplayMember = "Nome";
