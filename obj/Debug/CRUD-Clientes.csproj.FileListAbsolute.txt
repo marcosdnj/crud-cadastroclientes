@@ -1,0 +1,12 @@
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD-Clientes.csproj.AssemblyReference.cache
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD-Clientes.csproj.SuggestedBindingRedirects.cache
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD_Clientes.formLogin.resources
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD_Clientes.Properties.Resources.resources
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD-Clientes.csproj.GenerateResource.cache
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD-Clientes.csproj.CoreCompileInputs.cache
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\bin\Debug\CRUD-Clientes.exe.config
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\bin\Debug\CRUD-Clientes.exe
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\bin\Debug\CRUD-Clientes.pdb
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD_Clientes.FormPrincipal.resources
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD-Clientes.exe
+D:\Projetos para o GITHUB\CRUD CLIENTES - WIN FORMS\CRUD-Clientes\obj\Debug\CRUD-Clientes.pdb

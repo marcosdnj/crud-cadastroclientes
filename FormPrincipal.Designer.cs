@@ -1,6 +1,6 @@
 ﻿namespace CRUD_Clientes
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         /// Variável de designer necessária.

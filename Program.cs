@@ -16,7 +16,12 @@ namespace CRUD_Clientes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            /* MUDAR LINHA ABAIXO ANTES DE RODAR O PROGRAMA*/
+
+            //  Application.Run(new FormPrincipal());
+
+            Application.Run(new FormLogin());
         }
     }
 }
