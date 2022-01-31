@@ -19,9 +19,9 @@ namespace CRUD_Clientes
 
             /* MUDAR LINHA ABAIXO ANTES DE RODAR O PROGRAMA*/
 
-            //  Application.Run(new FormPrincipal());
+            Application.Run(new FormPrincipal());
 
-            Application.Run(new FormLogin());
+           //Application.Run(new FormLogin());
         }
     }
 }

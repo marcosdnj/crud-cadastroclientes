@@ -2,16 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CRUD_Clientes.CadastroClientes;
+using static CRUD_Clientes.FormLogin;
 
 namespace CRUD_Clientes
 {
     public partial class FormPrincipal : Form
     {
+
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ABFE7AQ\SQLEXPRESS;Initial Catalog=crudClientes;Integrated Security=True");
+
+        string clientesCadastrados = "";
+        string clientesDelete = "";
+        string pesquisaClientes = "";
+        string refreshClientes = "";
+        string deleteClientes = "";
+        string atualizarDelete = "";
+
+
+
+        private void label11_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+
         public FormPrincipal()
         {
             InitializeComponent();
@@ -24,6 +45,164 @@ namespace CRUD_Clientes
 
         private void label11_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            
+                Cadastro clientes = new Cadastro(textNome.Text, textCPF.Text, textEmail.Text, textTelefone.Text, textRua.Text, textComplemento.Text, textCidade.Text, textCep.Text);
+
+                MessageBox.Show(clientes.mensagem);
+                textNome.Clear();
+                textCPF.Clear();
+                textEmail.Clear();
+                textTelefone.Clear();
+                textRua.Clear();
+                textComplemento.Clear();
+                textCidade.Clear();
+                textCep.Clear();
+
+                textNome.Focus();
+            con.Close();
+
+        }
+
+        private void tabCadastrarClientes_Click(object sender, EventArgs e)
+        {
+
+          
+
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            con.Open();
+
+            //GRID DE PESQUISA
+            clientesCadastrados = $"SELECT * FROM clientesCadastrados";
+            SqlDataAdapter dp = new SqlDataAdapter(clientesCadastrados, con);
+            DataTable dt = new DataTable();
+            dp.Fill(dt);
+
+            dataGridClientes.DataSource = dt;
+
+            //GRID DE EXCLUSÃO
+
+            clientesDelete = $"SELECT * FROM clientesCadastrados";
+            SqlDataAdapter dpDelete = new SqlDataAdapter(clientesDelete, con);
+            DataTable dtDelete = new DataTable();
+            dpDelete.Fill(dtDelete);
+
+            dataGridDelete.DataSource = dtDelete;
+
+
+            con.Close();
+        }
+
+        private void tabPesquisarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPesquisarCliente_Load(object sender, EventArgs e)
+        {
+
+    
+
+
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            pesquisaClientes = $"SELECT * FROM clientesCadastrados WHERE CPF = '{textCpfPesquisa.Text}'";
+            SqlDataAdapter dp = new SqlDataAdapter(pesquisaClientes, con);
+            DataTable dt = new DataTable();
+            dp.Fill(dt);
+
+            dataGridClientes.DataSource = dt;
+            con.Close();
+        }
+
+        private void textCpfPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            refreshClientes = $"SELECT * FROM clientesCadastrados";
+            SqlDataAdapter dp = new SqlDataAdapter(refreshClientes, con);
+            DataTable dt = new DataTable();
+            dp.Fill(dt);
+            con.Close();
+            dataGridClientes.DataSource = dt;
+            
+        }
+
+        private void tabDeletarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            atualizarDelete = $"SELECT * FROM clientesCadastrados";
+            SqlDataAdapter dp = new SqlDataAdapter(atualizarDelete, con);
+            DataTable dt = new DataTable();
+            dp.Fill(dt);
+
+            dataGridDelete.DataSource = dt;
+            con.Close();
+        }
+
+        private void dataGridClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridDelete_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            var res = MessageBox.Show("O Cliente será excluido\nTem certeza que deseja concluir esta ação?", "ATENÇÃO", MessageBoxButtons.YesNo);
+             
+            if(res == DialogResult.Yes)
+            {
+                deleteClientes = $"DELETE FROM clientesCadastrados WHERE CPF = '{textDeleteClientes.Text}'";
+
+                SqlDataAdapter dp = new SqlDataAdapter(deleteClientes, con);
+                DataTable dt = new DataTable();
+                dp.Fill(dt);
+
+                dataGridClientes.DataSource = dt;
+                
+            }
+            else
+            {
+               
+            }
+            con.Close();
+
+
+            //deleteClientes = $"DELETE FROM clientesCadastrados WHERE CPF = '{textDeleteClientes.Text}'";
+
+            //SqlDataAdapter dp = new SqlDataAdapter(deleteClientes, con);
+            //DataTable dt = new DataTable();
+            //dp.Fill(dt);
+
+            //dataGridClientes.DataSource = dt;
+            //con.Close();
+
 
         }
     }

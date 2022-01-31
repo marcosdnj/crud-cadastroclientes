@@ -9,16 +9,32 @@ namespace CRUD_Clientes
 {
     internal class Conexao
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ABFE7AQ\SQLEXPRESS;Initial Catalog=crudClientes;Integrated Security=True");
+        SqlConnection con = new SqlConnection();
 
 
+        //Construtor
+        public Conexao()
+        {
+            con.ConnectionString = @"Data Source=DESKTOP-ABFE7AQ\SQLEXPRESS;Initial Catalog=crudClientes;Integrated Security=True";
+        }
 
 
+        //Método Conectar
+        public SqlConnection Conectar()
+        {
+            if (con.State == System.Data.ConnectionState.Closed)
+                con.Open();
+
+            return con;
 
 
+        }
 
-
-
-
+        //Metodo Desconectar
+        public void Desconectar()
+        {
+            if (con.State != System.Data.ConnectionState.Closed)
+                con.Close();
+        }
     }
 }

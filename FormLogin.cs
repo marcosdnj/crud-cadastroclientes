@@ -15,8 +15,8 @@ namespace CRUD_Clientes
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ABFE7AQ\SQLEXPRESS;Initial Catalog=crudClientes;Integrated Security=True");
 
-
-
+        public string nomeUsuario = "";
+        public string usuario = "";
 
         public FormLogin()
         {
@@ -31,39 +31,20 @@ namespace CRUD_Clientes
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-
-
             con.Open();
-            string query = $"SELECT * FROM LoginFuncionario WHERE Usuario = '{textLogin.Text}' and Senha = '{textSenha.Text}'";
-            Console.WriteLine(query);
-            SqlDataAdapter dp = new SqlDataAdapter(query, con);
+            nomeUsuario = $"SELECT Nome FROM LoginFuncionario WHERE Usuario = '{textLogin.Text}' and Senha = '{textSenha.Text}'";
+            SqlDataAdapter dp = new SqlDataAdapter(nomeUsuario, con);
             DataTable dt = new DataTable();
             dp.Fill(dt);
 
 
-            try 
-            { 
-                if(dt.Rows.Count == 1)
-                {
-                    
-                    FormPrincipal principal = new FormPrincipal();
-                    principal.Show();
-                    this.Hide();
-                    con.Close();
-                }
-            }
-            catch(Exception erroLogin)
-            {
-                MessageBox.Show("Usuario ou senha incorretos", "Erro ao logar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
-            }
-            textLogin.Clear();
-            textSenha.Clear();
-            textLogin.Focus();
-            con.Close();
 
-             
-            
+         
+
+
+           
+
         }
+
     }
 }

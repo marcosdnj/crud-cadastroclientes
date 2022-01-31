@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c58e4cac-b4dd-4cda-8c6f-1da2324630ea": {
+      "ProjectGuid": "c58e4cac-b4dd-4cda-8c6f-1da2324630ea",
+      "DisplayName": "CRUD-Clientes",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
